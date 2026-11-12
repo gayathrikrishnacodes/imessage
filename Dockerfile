@@ -19,9 +19,11 @@ WORKDIR /app/backend
 
 COPY backend/package*.json ./
 
-RUN npm install --omit=dev
+RUN npm install
 
 COPY backend/ .
+
+RUN npm run build
 
 # Stage 3: Final Production Image
 FROM node:22-alpine AS runner
@@ -33,10 +35,9 @@ ENV PORT=3000
 
 COPY --from=backend-build /app/backend/package.json ./package.json
 COPY --from=backend-build /app/backend/node_modules ./node_modules
-COPY --from=backend-build /app/backend/src ./src
-
+COPY --from=backend-build /app/backend/dist ./dist
 COPY --from=frontend-build /app/frontend/dist ./public
 
 EXPOSE 3000
 
-CMD ["node", "src/index.js"]
+CMD ["node", "dist/index.js"]
