@@ -27,25 +27,8 @@ app.use(clerkMiddleware());
 // GET route
 app.get("/health", (req, res) => {
     // const {message,image,video}=req.body;
-    res.send(200).json({ok:true});
+    res.status(200).json({ok:true});
 });
-
-// Start server
-// const startServer = async () => {
-//     try {
-//         await connectDB();
-
-//         app.listen(PORT, () => {
-//             console.log(`Server running on port ${PORT}`);
-//         });
-//     } catch (error) {
-//         console.error("Server startup failed:", error.message);
-//     }
-// };
-
-// startServer();
-
-
 
 
 //if the public directory exists, serve the static files
