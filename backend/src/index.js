@@ -1,27 +1,9 @@
-// import express from 'express';
-// import { connectDB } from "./lib/db.js";
-// import "dotenv/config"
-// import dns from "node:dns";
-
-// dns.setServers(["1.1.1.1", "8.8.8.8"]);
-// const app=express();
-// const PORT=process.env.PORT
-// console.log("MONGO_URI=",process.env.MONGO_URI)
-
-// app.listen(PORT,()=> {
-//     connectDB();
-//     console.log("server is up and running on port 3000",PORT )}
-//  );
-
-
-
-
 import express from "express";
 import { connectDB } from "./lib/db.js";
 
 import "dotenv/config";
 import cors from "cors";
-
+import job from "./lib/job.js";
 import dns from "node:dns";
 import User from './models/user.model.js';
 
