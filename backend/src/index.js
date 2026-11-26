@@ -3,7 +3,6 @@ import { connectDB } from "./lib/db.js";
 
 import "dotenv/config";
 import cors from "cors";
-import job from "./lib/job.js";
 import dns from "node:dns";
 import User from './models/user.model.js';
 
