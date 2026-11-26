@@ -6,6 +6,7 @@ import cors from "cors";
 import dns from "node:dns";
 import User from './models/user.model.js';
 
+import job from "./lib/cron.js";
 import { clerkMiddleware } from "@clerk/express";
 // dns.setServers(["1.1.1.1", "8.8.8.8"]);
  
